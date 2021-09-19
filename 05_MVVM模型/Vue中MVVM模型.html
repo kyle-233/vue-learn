@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+  <!-- container -->
+  <!-- View -->
+  <div id="root">
+    <h1>姓名:{{name}}</h1>
+    <h1>年龄:{{age}}</h1>
+  </div>
+
+  <script>
+    // Vue instance
+
+    // data里面的属性会直接出现在Vue instance 中
+    const vm = new Vue({ // ViewModel
+      el: "#root",
+
+      // Model
+      data: {
+        name: "Tom",
+        age: 18
+      }
+    })
+  </script>
+
+
+
+</body>
+
+</html>

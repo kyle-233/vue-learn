@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模板语法</title>
+
+  <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+  <!-- container -->
+  <div id="root">
+
+    <h1>插值语法1</h1>
+    <h3>例子：Hello, {{name}}</h3>
+    <h3>语法格式：{{}}</h3>
+
+    <hr>
+
+    <h1>插值语法2</h1>
+    <h3 v-text="name">例子：Hello</h3>
+    <h3>语法格式：v-text | v-text="name" | 它会覆盖标签原本的内容
+    </h3>
+
+    <hr>
+
+    <h1>插值语法3</h1>
+    <h3 v-html="name">例子：Hello</h3>
+    <h3>语法格式：v-html | v-html="name" | 它会覆盖标签原本的内容 | 与 v-text 区别 v-text 不会解析html代码语句，而v-html 会解析
+    </h3>
+
+    <hr>
+
+    <h1>指令语法</h1>
+    <a :href="url">百度</a>
+    <h3>语法格式：v-bind(:)括号为简写形式 v-bind:herf="url" | :herf="url"</h3>
+
+
+  </div>
+
+  <script>
+    Vue.config.productionTip = false;
+    new Vue({
+      el: '#root',
+      data: {
+        name: "jack",
+        url: 'https://www.baidu.com'
+      }
+    })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+  <!-- container -->
+  <div id="root">
+    Hello {{name}}
+  </div>
+
+  <script>
+    // Vue instance
+    // const v = new Vue({
+    //   // el: "#root", //第一种写法
+    //   data: {
+    //     name: 'Tom',
+    //   }
+    // })
+
+    // v.$mount("#root"); //第二种写法，和 el 作用一样
+
+    // console.log(v);
+
+    new Vue({
+      el: "#root",
+      data() { //第二种写法：函数式（普通函数）不可以是箭头行数
+        console.log("this指向：", this); //此处的this指向 Vue
+        return {
+          name: "Tom",
+        }
+      }
+    })
+  </script>
+
+
+
+</body>
+
+</html>
