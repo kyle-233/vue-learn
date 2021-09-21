@@ -5,32 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <script src="../js/vue.js"></script>
+  <title>数据代理</title>
 </head>
 
 <body>
 
-  <!-- container -->
-  <div id="root">
-
-
-
-
-  </div>
-
   <script>
-    // Vue instance
-    const vm = new Vue({
-      el: "#root",
-      data: {
-        name: "Tom",
+    let obj = { x: 100 };
+    let obj2 = { x: 200 };
+
+    Object.defineProperty(obj2, 'x', {
+      get() {
+        return obj.x;
       },
+      set(value) {
+        obj.x = value;
+      }
     })
   </script>
-
-
 
 </body>
 

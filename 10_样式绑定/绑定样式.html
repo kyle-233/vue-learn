@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>绑定样式</title>
+
+  <script src="../js/vue.js"></script>
+
+  <style>
+    .happy {
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- container -->
+  <div id="root">
+
+    <!-- 一般写法 -->
+    <div class="basic"></div>
+
+    <!-- 绑定 class 字符串写法 -->
+    <div :class="mood"></div>
+
+    <!-- 绑定 class 数组写法 -->
+    <div :class="arr"></div>
+
+    <!-- 绑定class 对象写法 -->
+    <div :class="obj"></div>
+    <div :class="{style1: false}"></div>
+
+
+    <!-- 绑定style -->
+
+    <div :style="{fontSize: size + 'px'}"></div>
+
+    <!-- 绑定style 对象写法 -->
+
+    <div :style="styleObj"></div>
+
+    <div :style="[styleObj, styleObj2]"></div>
+
+
+
+  </div>
+
+  <script>
+    // Vue instance
+    const vm = new Vue({
+      el: "#root",
+      data: {
+        name: "Tom",
+        mood: "happy",
+        arr: [],
+        obj: {
+          style1: false,
+          style2: false,
+        },
+        size: 40,
+        styleObj: {
+          fontSize: '40px',
+          color: 'red',
+        },
+        styleObj2: {
+
+        },
+      },
+    })
+  </script>
+
+
+
+</body>
+
+</html>

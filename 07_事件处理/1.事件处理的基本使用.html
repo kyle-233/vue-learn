@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+  <!-- container -->
+  <div id="root">
+    <h2>Hello {{name}}</h2>
+    <button v-on:click="showInfo">click show Info</button>
+    <!-- 缩写 -->
+    <button @click="showInfo2(66)">click show Info</button>
+
+    <button @click="showInfo3($event,66)">click show Info</button>
+  </div>
+
+  <script>
+    // Vue instance
+    const vm = new Vue({
+      el: "#root",
+      data: {
+        name: "Tom"
+      },
+      methods: {
+        showInfo(a, b, c, d) {
+          console.log(a); //event事件参数
+          console.log(b);
+          console.log(c);
+          console.log(d);
+          // alert("show Info Message");
+        },
+
+        showInfo2(number) {
+          console.log(number);
+          // alert("show Info Message");
+        },
+
+        showInfo3(event, number) {
+          console.log(event);
+          console.log(number);
+          // alert("show Info Message");
+        }
+      }
+    })
+  </script>
+
+
+
+</body>
+
+</html>
